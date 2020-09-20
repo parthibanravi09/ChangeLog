@@ -1,0 +1,24 @@
+<div class="form_container">
+    <div class="splitimage left" style="background-color:black">
+            <div class="centered">
+    <span style=color:white;font-size:50px>CHANGE LOG MANAGEMENT SYSTEM</span>
+            </div>
+    </div>
+    <div class="split right">
+    <div class="centered">
+        <div>
+                <h2>Login</h2>
+                <form  (ngSubmit) = "onClickSubmit(loginForm)" #loginForm="ngForm" >
+                    <div *ngIf="service.loginStatus" class="validation-error">{{service.ErrorMsg}}</div>
+                    <input class="form-control" name="UserName" #UserName="ngModel" [(ngModel)]="login.UserName" placeholder="User Name" required>
+                        <div class="validation-error" *ngIf="UserName.invalid && UserName.touched"> User Name is Required.</div>
+            
+                    <input class="form-control" type="password" name="Password" #Password="ngModel" [(ngModel)]="login.Password" placeholder="Password" required>
+                        <div class="validation-error" *ngIf="Password.invalid && Password.touched"> Password is Required.</div>
+                    <button value="Login" name="btnLogin" [disabled]="!loginForm.valid" class="btn btn-primary btn-info" >Login</button>
+                    <br/><p><span><a href="http://localhost:56974/login/GoogleLogin">Use Google Login</a></span></p>
+                </form>
+            </div>
+</div>
+</div>
+</div>

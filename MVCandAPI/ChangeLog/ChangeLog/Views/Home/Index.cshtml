@@ -1,0 +1,49 @@
+﻿@model ChangeLog.Models.HomeViewModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+    <title>Change Logs</title>
+</head>
+<body>
+    <h1>@Model.PageHeader</h1>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Type</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Updated</th>
+        </tr>
+        @foreach (var log in Model.ChangeLogModels)
+        {
+            <tr>
+                <td class="tbl2">@log.No</td>
+                <td class="tbl2">@log.Type</td>
+                <td class="tbl2">@log.Title</td>
+                <td style="width:50%;" class="tbl2">@log.Content</td>
+                <td class="tbl2">@log.Updated</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

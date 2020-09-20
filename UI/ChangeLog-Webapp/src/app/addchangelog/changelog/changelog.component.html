@@ -1,0 +1,26 @@
+<table class="table">
+<tr><th>No</th>
+<th>Type</th>
+<th>Title</th>
+<th>Content</th>
+<th>Updated</th>
+<th></th>
+<th></th>
+</tr>
+
+<tr *ngFor="let changelog of changelogService.allChangelogs | async">
+    <td class="tbl2">{{changelog.no}}</td> 
+    <td class="tbl2">{{changelog.type}}</td>  
+    <td class="tbl2">{{changelog.title}}</td> 
+    <td style="width: 50%;" [ngStyle]="{'color': changelog.type=='New' ? 'red' : (changelog.type=='Update' ? 'blue' : 'green') }" class="tbl2">{{changelog.content}}</td> 
+    <td class="tbl2">{{changelog.updated}}</td>
+    <td>
+        <a class="btn" (click)="showForEdit(changelog)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn text-danger" (click)="onDelete(changelog.no)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+</tr>
+</table>

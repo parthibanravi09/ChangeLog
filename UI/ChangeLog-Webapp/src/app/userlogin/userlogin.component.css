@@ -1,0 +1,101 @@
+.split {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  .splitimage {
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    text-align: center;
+  }
+  /* Control the left side */
+  .left {
+    left: 0;
+    
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 1000px;
+  }
+ 
+ form {
+    background: white;
+    width: 300px;   
+    font-family: lato;
+    position: relative;
+    color: #333;
+    border-radius: 10px;
+    
+ }
+ 
+ form header {
+    
+    
+    color:Black;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+ }
+ 
+ form label {
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    position: relative;
+ }
+ 
+ form label span {
+    color: #FF3838;
+    font-size: 2em;
+    position: absolute;
+    left: 2.3em;
+    top: -10px;
+ }
+ form input {
+    display: block;
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1em;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+ }
+ 
+ form .help {
+    margin-left: 20px;
+    font-size: 0.8em;
+    color: #777;
+ }
+
+ .btn
+ {
+     margin-top: 20px;
+     margin-left:180px;
+ }
