@@ -67,7 +67,7 @@ namespace ChangeLog.Service.Log
                 Title = changeLog.Title,
                 Type = changeLog.Type,
                 LastUpdated = DateTime.UtcNow,
-                Id = changeLog.Id,
+                Id = changeLog.Id.Value,
             };
 
             dbContext.ChangeLogs.Update(changeLogData);
