@@ -27,7 +27,7 @@ namespace ChangeLog.Controllers
 
             var HomeViewModel = new HomeViewModel()
             {
-                PageHeader = "Chnage Logs",
+                PageHeader = "Change Logs",
                 ChangeLogModels = logList
             };
 

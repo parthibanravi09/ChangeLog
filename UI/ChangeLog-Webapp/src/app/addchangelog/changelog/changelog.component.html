@@ -12,7 +12,7 @@
     <td class="tbl2">{{changelog.no}}</td> 
     <td class="tbl2">{{changelog.type}}</td>  
     <td class="tbl2">{{changelog.title}}</td> 
-    <td style="width: 50%;" [ngStyle]="{'color': changelog.type=='New' ? 'red' : (changelog.type=='Update' ? 'blue' : 'green') }" class="tbl2">{{changelog.content}}</td> 
+    <td style="width: 50%;" [ngStyle]="{'color': changelog.type=='Fix' ? 'red' : (changelog.type=='Update' ? 'green' : 'blue') }" class="tbl2">{{changelog.content}}</td> 
     <td class="tbl2">{{changelog.updated}}</td>
     <td>
         <a class="btn" (click)="showForEdit(changelog)">

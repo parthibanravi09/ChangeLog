@@ -1,7 +1,14 @@
 ﻿@model ChangeLog.Models.HomeViewModel
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
+        .grid-striped .row:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.05);
+        }
+        .headerStyle {
+            padding-bottom: 10px;
+        }
 
         table {
             border-collapse: collapse;
@@ -25,25 +32,73 @@
     <title>Change Logs</title>
 </head>
 <body>
-    <h1>@Model.PageHeader</h1>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Type</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Updated</th>
-        </tr>
-        @foreach (var log in Model.ChangeLogModels)
-        {
-            <tr>
-                <td class="tbl2">@log.No</td>
-                <td class="tbl2">@log.Type</td>
-                <td class="tbl2">@log.Title</td>
-                <td style="width:50%;" class="tbl2">@log.Content</td>
-                <td class="tbl2">@log.Updated</td>
-            </tr>
-        }
-    </table>
+    <div style="text-align:center;">
+
+        <h2 class="bg-secondary text-white headerStyle">
+            @Model.PageHeader
+        </h2>
+
+    </div>
+    <br />
+    @*<div class="table-responsive-lg">
+            <table class="table-responsive-lg">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Updated</th>
+                </tr>
+                @foreach (var log in Model.ChangeLogModels)
+                {
+                    <tr>
+                        <td class="tbl2">@log.No</td>
+                        <td class="tbl2">@log.Type</td>
+                        <td class="tbl2">@log.Title</td>
+                        <td style="width:50%;" class="tbl2">@log.Content</td>
+                        <td class="tbl2">@log.Updated</td>
+                    </tr>
+                }
+            </table>
+        </div>*@
+<div class="container grid-striped">
+    <div class="row font-weight-bold py-2">
+        <div class="col">
+            #
+        </div>
+        <div class="col">
+            Type
+        </div>
+        <div class="col">
+            Title
+        </div>
+        <div class="col-6">
+            Content
+        </div>
+        <div class="col-2">
+            Updated
+        </div>
+    </div>
+    @foreach (var log in Model.ChangeLogModels)
+    {
+        <div class="row py-2">
+            <div class="col">
+                @log.No
+            </div>
+            <div class="col">
+                @log.Type
+            </div>
+            <div class="col">
+                @log.Title
+            </div>
+            <div class="col-6" style="width:50%">
+                @log.Content
+            </div>
+            <div class="col-2">
+                @log.Updated
+            </div>
+        </div>
+    }
+</div>
 </body>
 </html>
